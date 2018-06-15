@@ -49,7 +49,6 @@ int main()
 
     yylex();
 
-  
-    getch();
+
     return 0;
 }

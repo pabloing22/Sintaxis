@@ -1,0 +1,54 @@
+El archivo ejecutable.exe fué desarrollado en Windows, por lo tanto sólo se podrá
+ejecutar en Windows como un ejecutable o, como excepción, podrá ejecutarse en linux con
+ayuda del paquete Wine.
+
+Definimos para nuestro analizador Léxico las siguientes palabras reservadas con sus 
+respectivos TOKENS:
+-CREATE : TKN_CREATE
+-TABLE : TKN_TABLE
+-STRING : TKN_STRING
+-NUMBER : TKN_ NUMBER
+-SELECT : TKN_SELECT
+-FROM : TKN_FROM
+-WHERE : TKN_WHERE
+-AND : TKN_AND
+-OR : TKN_OR
+-GROUP : TKN_GROUP
+-BY : TKN_BY
+
+Caracteres especiales reconocidos por el Lexer:
+"*" : TKN_ASTERISCO
+"," : TKN_COMA
+"'" : TKN_COMILLA
+"(" : TKN_PARABIERTO
+")" : TKN_PARCERRADO
+";" : TKN_PUNTOCOMA
+"." : TKN_PUNTO
+">" : TKN_MAYOR
+"<" : TKN_MENOR
+"=" : TKN_IGUAL
+">=" : TKN_MAYORIGUAL
+"<=" : TKN_MENORIGUAL
+"!=" : TKN_DISTINTO.
+
+El Lexer además reconoce por el token TKN_ID a los identificadores de nombres 
+tales como de tablas o campos y están contemplados tanto para minúsculas
+mayúsculas y/o combinaciones, por ejemplo:
+'JUAN' : TKN_ID
+clienteID: TKN_ID
+
+también admite guión bajo _ o guión medio - incluidos en el ID:
+
+cliente_id : TKN_ID
+
+y cualquier cosa que no reconozca como algún token de palabra reservada
+lo tomará inmediatamente como un identificador con su respectivo TKN_ID.
+Cuando el lexer encuentra lo que se supone es un solo identificador pero
+está separado con uno o más espacios, lo reconocerá como dos identificadores
+distintos, como por ejemplo en el caso de que reconozco "cliente id":
+cliente: TKN_ID
+id: TKN_ID
+
+En caso de no reconocer un caracter especial o palabra reservada, el lexer
+brindará un mensaje indicando la inconsistencia y el número de linea en donde
+se encuentra junto con el caracter/palabra no reconocido.

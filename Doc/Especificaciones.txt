@@ -1,7 +1,3 @@
-El archivo ejecutable.exe fué desarrollado en Windows, por lo tanto sólo se podrá
-ejecutar en Windows como un ejecutable o, como excepción, podrá ejecutarse en linux con
-ayuda del paquete Wine.
-
 Definimos para nuestro analizador Léxico las siguientes palabras reservadas con sus 
 respectivos TOKENS:
 -CREATE : TKN_CREATE
@@ -15,6 +11,9 @@ respectivos TOKENS:
 -OR : TKN_OR
 -GROUP : TKN_GROUP
 -BY : TKN_BY
+
+IMPORTANTE: Sólo se aceptan mayúsculas para las palabras reservadas. En caso contrario
+se consideran IDs
 
 Caracteres especiales reconocidos por el Lexer:
 "*" : TKN_ASTERISCO
@@ -51,4 +50,6 @@ id: TKN_ID
 
 En caso de no reconocer un caracter especial o palabra reservada, el lexer
 brindará un mensaje indicando la inconsistencia y el número de linea en donde
-se encuentra junto con el caracter/palabra no reconocido.
+se encuentra junto con el caracter/palabra no reconocido. Por ejemplo el caracter especial
+"[" ó "]" o cualquier otro que no esté contemplado dentro de los caracteres especiales
+reconocidos, mencionado anteriormente.

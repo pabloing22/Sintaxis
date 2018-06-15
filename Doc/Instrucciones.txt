@@ -1,0 +1,12 @@
+En la carpeta "DOC" está contenido el archivo binario que desde la consola de un sistema
+operativo Linux puede ejecutarse de la siguiente manera:
+./ejecutable
+
+Una vez ingresado el comando deberás ingresar una consulta SQL a modo de ejemplo en una
+sola linea. Recomendamos intentar lo siguiente a modo de ejemplo:
+
+SELECT colum FROM table WHERE carlitos_edad=22;
+
+Y a continuación se motrarán en forma de lista todos los tokens identificados.
+Para el ejemplo anterior, este será el resultado:
+

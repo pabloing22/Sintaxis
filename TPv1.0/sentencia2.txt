@@ -1,0 +1,1 @@
+SELECT colum_1, Colum-2 FROM tabla;

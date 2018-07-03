@@ -50,7 +50,16 @@
      ORDERBY = 266,
      ASC = 267,
      DESC = 268,
-     FIN = 269
+     CREATE = 269,
+     ENTERO = 270,
+     CHAR = 271,
+     INT = 272,
+     REAL = 273,
+     COMILLA = 274,
+     ABREPAR = 275,
+     CIERRAPAR = 276,
+     DEFAULT = 277,
+     FIN = 278
    };
 #endif
 

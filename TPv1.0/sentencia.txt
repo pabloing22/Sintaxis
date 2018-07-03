@@ -1,1 +1,1 @@
-SELECT id FROM t id, id, id ;
+CREATE TABLE Nombre_tabla (

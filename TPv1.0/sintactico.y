@@ -14,7 +14,7 @@ char s;
 
 %}
 
-%start SIGMA
+%start sigma
 
 %token SELECT
 %token FROM
@@ -27,25 +27,28 @@ char s;
 %token ORDERBY
 %token ASC
 %token DESC
+
+%token CREATE
+%token ENTERO
+%token CHAR
+%token INT
+%token REAL
+%token COMILLA
+%token ABREPAR
+%token CIERRAPAR
+%token DEFAULT
+
 %token FIN /* Punto y coma */
 
 %%
 
-SIGMA: X
+sigma: y
 
-X: SELECT A FROM D FIN ;
+y: CREATE ID ABREPAR m CIERRAPAR FIN ;
+m: ID t ABREPAR ENTERO CIERRAPAR | ID t ABREPAR ENTERO CIERRAPAR COMA m | ID t ABREPAR ENTERO CIERRAPAR n ;
+n: DEFAULT COMILLA ID COMILLA | DEFAULT COMILLA ID COMILLA COMA m ;
+t: CHAR | INT | REAL ;
 
-X: SELECT A FROM D ORDERBY D FIN | SELECT A FROM D ORDERBY D E FIN ;
-
-A: ASTERISCO | ID | ID COMA B | ID PUNTO ID | ID PUNTO ID COMA B | ID PUNTO ID COMA C;
-
-B: ID | ID COMA B | ID COMA C;
-
-C: ID PUNTO ID | ID PUNTO ID COMA C | ID PUNTO ID COMA B ;
-
-D: ID | ID COMA D;
-
-E: ASC | DESC
 
 %%
 

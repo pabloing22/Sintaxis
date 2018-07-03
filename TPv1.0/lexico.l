@@ -22,6 +22,15 @@ identificador  {esp}*[a-zA-Z]+{esp}*{dig}*[a-zA-Z]*{dig}*{esp}*
 "ORDER BY"      {return (ORDERBY);}
 "ASC"           {return (ASC);}
 "DESC"          {return (DESC);}
+"CREATE TABLE"  {return (CREATE);}
+{dig}           {return (ENTERO);}
+"char"          {return (CHAR);}
+"int"           {return (INT);}
+"real"          {return (REAL);}
+"default"       {return (DEFAULT);}
+"'"             {return (COMILLA);}
+"("             {return (ABREPAR);}
+")"             {return (CIERRAPAR);}
 "*"             {return (ASTERISCO);}
 ";"             {return (FIN);}
 ","             {return (COMA);}

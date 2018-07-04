@@ -25,8 +25,20 @@ char s;
 %token GBAJO
 %token PUNTO
 %token ORDERBY
+%token GROUPBY
 %token ASC
 %token DESC
+
+%token IGUAL
+%token DISTINTO
+%token MAYORIGUAL
+%token MENORIGUAL
+%token MAYOR
+%token MENOR
+%token WHERE
+%token TIPREAL
+%token OR
+%token AND
 
 %token CREATE
 %token ENTERO
@@ -47,7 +59,54 @@ char s;
 
 %%
 
-sigma: y;
+sigma: y | x;
+
+x: SELECT a FROM d FIN
+ | SELECT a FROM d ORDERBY d e FIN
+ | SELECT a FROM d GROUPBY d FIN
+ | SELECT a FROM d WHERE condicion ff FIN
+;
+a: ASTERISCO | ID | ID COMA b | ID PUNTO ID | ID PUNTO ID COMA b | ID PUNTO ID COMA c
+;
+b: ID | ID COMA b | ID COMA c;
+
+c: ID PUNTO ID | ID PUNTO ID COMA c | ID PUNTO ID COMA b;
+
+d: ID | ID COMA d;
+
+e:
+ | ASC
+ | DESC
+;
+ff:
+  | ORDERBY d e
+  | GROUPBY d
+;
+log:
+   | OR
+   | AND
+;
+comi:
+    | COMILLA
+;
+condicion: sss
+;
+sss: ABREPAR ID operador comi ID comi CIERRAPAR log condicion
+   | ABREPAR ID operador comi TIPREAL comi CIERRAPAR log condicion
+   | ABREPAR ID operador comi ENTERO comi CIERRAPAR condicion
+   | ABREPAR ID operador comi ID comi CIERRAPAR
+   | ABREPAR ID operador comi ENTERO comi CIERRAPAR
+   | ABREPAR ID operador comi TIPREAL comi CIERRAPAR
+;
+operador: MAYOR
+        | MENOR
+        | IGUAL
+        | MENORIGUAL
+        | MAYORIGUAL
+        | DISTINTO
+;
+
+
 
 y: CREATE ID ABREPAR m CIERRAPAR FIN ;
 m: ID t ABREPAR ENTERO CIERRAPAR | ID t ABREPAR ENTERO CIERRAPAR COMA m | ID t ABREPAR ENTERO CIERRAPAR n ;

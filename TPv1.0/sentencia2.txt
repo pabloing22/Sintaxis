@@ -1,1 +1,1 @@
-SELECT colum_1, Colum-2 FROM tabla;
+SELECT colum_1, Colum-2 FROM tabl WHERE ( id = 'id') GROUP BY id,id;

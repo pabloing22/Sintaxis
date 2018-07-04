@@ -20,6 +20,7 @@ identificador  {esp}*[a-zA-Z]+{esp}*{dig}*[a-zA-Z]*{dig}*{esp}*
 "SELECT"        {return (SELECT);}
 "FROM"          {return (FROM);}
 "ORDER BY"      {return (ORDERBY);}
+"GROUP BY"      {return (GROUPBY);}
 "ASC"           {return (ASC);}
 "DESC"          {return (DESC);}
 "CREATE TABLE"  {return (CREATE);}
@@ -39,6 +40,18 @@ identificador  {esp}*[a-zA-Z]+{esp}*{dig}*[a-zA-Z]*{dig}*{esp}*
 "-"             {return (GMEDIO);}
 "_"             {return (GBAJO);}
 "."             {return (PUNTO);}
+
+
+"="             {return (IGUAL);}
+"<>"            {return DISTINTO;}
+"<="            {return MENORIGUAL;}
+">="            {return MAYORIGUAL;}
+">"             {return MAYOR;}
+"<"             {return MENOR;}
+"WHERE"         {return WHERE;}
+"OR"            {return OR;}
+"AND"           {return AND;}
+{digito}        {return (TIPREAL);}
 
 
 

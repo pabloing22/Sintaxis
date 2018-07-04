@@ -1,1 +1,10 @@
 CREATE TABLE Nombre_tabla (
+
+nombre char (20) NOT NULL,
+apellido char(20),
+edad int (2),
+pepe char (2) NOT NULL,
+PRIMARY KEY ( pepe ),
+dni int (8),
+legajo int(10)
+ );

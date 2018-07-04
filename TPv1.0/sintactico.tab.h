@@ -59,7 +59,9 @@
      ABREPAR = 275,
      CIERRAPAR = 276,
      DEFAULT = 277,
-     FIN = 278
+     NOTNULL = 278,
+     P_KEY = 279,
+     FIN = 280
    };
 #endif
 

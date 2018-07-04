@@ -28,6 +28,8 @@ identificador  {esp}*[a-zA-Z]+{esp}*{dig}*[a-zA-Z]*{dig}*{esp}*
 "int"           {return (INT);}
 "real"          {return (REAL);}
 "default"       {return (DEFAULT);}
+"NOT NULL"      {return(NOTNULL);}
+"PRIMARY KEY"   {return (P_KEY);}
 "'"             {return (COMILLA);}
 "("             {return (ABREPAR);}
 ")"             {return (CIERRAPAR);}
